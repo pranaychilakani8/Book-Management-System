@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Book</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Contact</a>
+        <a href="#">About</a>
+        <a href="addBook.html">Add Book</a>
+    </div>
+
+    <div class="main-content">
+        <h1>Edit Book</h1>
+        <div class="form-container">
+            <form action="updateBookCode" method="POST">
+                <input type="hidden" name="bookID" value="<!-- BookID from query parameter -->">
+
+                <div class="form-group">
+                    <label for="title">Book Title</label>
+                    <input type="text" id="title" name="title"  required>
+                </div>
+
+                <div class="form-group">
+                    <label for="author">Author</label>
+                    <select id="author" name="authorID" required>
+                        <option value="1" selected>John Doe</option>
+                        <option value="2">Jane Smith</option>
+                        <!-- Populate based on current data -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="genre">Genre</label>
+                    <select id="genre" name="genreID" required>
+                        <option value="1">Fiction</option>
+                        <option value="2" selected>Non-Fiction</option>
+                        <!-- Populate based on current data -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="pages">Number of Pages</label>
+                    <input type="number" id="pages" name="pages" value="<!-- Current Pages -->" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="publishedDate">Published Date</label>
+                    <input type="date" id="publishedDate" name="publishedDate" value="<!-- Current Published Date -->" required>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit">Update Book</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
